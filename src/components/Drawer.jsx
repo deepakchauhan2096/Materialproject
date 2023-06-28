@@ -32,7 +32,7 @@ export default function TemporaryDrawer() {
     return (<Box role="presentation">
       <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+          <ListItem key={text} disablePadding sx={{width:250}} xl={false} >
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -61,6 +61,7 @@ export default function TemporaryDrawer() {
           <Drawer
             open={open}
             onClose={handleClose}
+            anchor={"left"}
           >
             <Lists />
           </Drawer>
