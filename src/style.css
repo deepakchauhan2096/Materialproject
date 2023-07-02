@@ -374,6 +374,16 @@ a:focus {
 }
 
 
+.post-cover {
+    position: absolute;
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.9)) );
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.9) 100%);
+    height: 100px;
+    z-index: 19;
+    width: 100%;
+    bottom: 0;
+}
+
 
 
 

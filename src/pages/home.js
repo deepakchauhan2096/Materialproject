@@ -31,6 +31,8 @@ import cardimg from "../images/adult-asian-attractive-background-beach-beautiful
 import { Heading } from "../components/Heading";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
+import { Recents } from "../components/Recents";
 
 const home = () => {
   const Cards = () => {
@@ -59,22 +61,134 @@ const home = () => {
           image={cardimg}
           alt="Paella dish"
         />
-        <CardContent>
-          <Typography variant="body2" color="text.secondary">
+        <CardContent sx={{ px: 0 }}>
+          <Typography variant="body2" color="error">
+            Popular
+          </Typography>
+          <Typography variant="body1" color="#000">
+            Microsoft announces native Teams
+          </Typography>
+          <Typography
+            sx={{
+              padding: "5px 0",
+              fontWeight: 400,
+              color: "#696969",
+              fontSize: "0.8rem",
+            }}
+            variant="p"
+          >
+            <AccountCircleRoundedIcon sx={{ fontSize: "0.8rem" }} /> {"user"}{" "}
+            <AccessTimeIcon sx={{ fontSize: "0.8rem" }} /> {"August 4, 2022"}
+          </Typography>
+          <Typography variant="body1" color="text.secondary" py={1}>
             This impressive paella is a perfect party dish and a fun meal to
             cook together with your guests. Add 1 cup of frozen peas along with
             the mussels, if you like.
           </Typography>
         </CardContent>
-        <CardActions disableSpacing>
+        {/* <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
             <FavoriteIcon />
           </IconButton>
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
-        </CardActions>
+        </CardActions> */}
       </Card>
+    );
+  };
+
+  const Popular = () => {
+    return (
+      <Grid
+        xl={12}
+        md={12}
+        height={"200px"}
+        sx={{ objectFit: "contain", position: "relative" }}
+      >
+        <img
+          src="https://swiperjs.com/demos/images/nature-1.jpg"
+          width={"100%"}
+          height={"100%"}
+        />
+        <Box
+          position={"absolute"}
+          sx={{ zIndex: "20", bottom: 0, textAlign: "left" }}
+          p={2}
+        >
+          <Button
+            sx={{ fontSize: "10px", paddingBottom: "4px" }}
+            variant="contained"
+            color="error"
+            className="rounded-0"
+          >
+            Popular
+          </Button>
+          <Typography
+            sx={{
+              padding: "5px 0",
+              fontWeight: 400,
+              color: "#fff",
+              fontSize: "1.1rem",
+            }}
+            variant="h6"
+          >
+            Volcano near Iceland’s main airport
+          </Typography>
+          <Typography
+            sx={{
+              padding: "5px 0",
+              fontWeight: 400,
+              color: "#fff",
+              fontSize: "0.8rem",
+            }}
+            variant="p"
+          >
+            <AccountCircleRoundedIcon sx={{ fontSize: "0.8rem" }} /> {"user"}{" "}
+            <AccessTimeIcon sx={{ fontSize: "0.8rem" }} /> {"August 4, 2022"}
+          </Typography>
+        </Box>
+        <Box className="post-cover"></Box>
+      </Grid>
+    );
+  };
+
+  const Sidebar = () => {
+    return (
+      [0,1,2,3].map((item)=>(<Grid xl={12} md={12} xs={12} height={"89.5px"} >
+        <Card
+          sx={{
+            display: "flex",
+            boxShadow: "0",
+            borderBottom: "1px dashed #e9e9e9",
+          }}
+          className="rounded-0"
+          p={1}
+        >
+          <CardMedia
+            component="img"
+            sx={{ width: 85, height: 85, padding: "7px 7px 7px 0" }}
+            image="https://swiperjs.com/demos/images/nature-1.jpg"
+            alt="Live from space album cover"
+          />
+          <Box
+            sx={{ display: "flex", flexDirection: "column", height: "100%" }}
+          >
+            <CardContent sx={{ flex: "1 0 auto" }}>
+              <Typography component="div" variant="body2">
+                Live From Space {item}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                color="text.secondary"
+                component="div"
+              >
+                Mac Miller
+              </Typography>
+            </CardContent>
+          </Box>
+        </Card>
+      </Grid>))
     );
   };
 
@@ -127,50 +241,8 @@ const home = () => {
           </Grid>
           <Grid item container xl={6} md={12} xs={12} spacing={0}>
             <Grid item xl={6} md={12} xs={12} height={"400px"} paddingRight={1}>
-              <Grid xl={6} md={12} height={"200px"} bgcolor={"yellow"} sx={{objectFit:"contain",position:"relative"}}>
-                <img src="https://swiperjs.com/demos/images/nature-1.jpg" width={"100%"} height={"100%"}  />
-                <Box
-                  position={"absolute"}
-                  sx={{ zIndex: "20", bottom: 0, textAlign: "left" }}
-                  p={2}
-                >
-                  <Button
-                    sx={{ fontSize: "10px", paddingBottom: "4px" }}
-                    variant="contained"
-                    color="error"
-                  >
-                    Popular
-                  </Button>
-                  <Typography
-                    sx={{ padding: "5px 0", fontWeight: 400, color: "#fff",fontSize:"1.1rem" }}
-                    variant="h6"
-                  >
-                    Volcano near Iceland’s main airport
-                  </Typography>
-                </Box>
-              </Grid>
-              <Grid xl={6} md={12} height={"200px"} bgcolor={"red"}  sx={{objectFit:"fill",position:"relative"}}>
-                <img src="https://swiperjs.com/demos/images/nature-1.jpg" width={"100%"} height={"100%"} />
-                <Box
-                  position={"absolute"}
-                  sx={{ zIndex: "20", bottom: 0, textAlign: "left" }}
-                  p={2}
-                >
-                  <Button
-                    sx={{ fontSize: "10px", paddingBottom: "4px" }}
-                    variant="contained"
-                    color="error"
-                  >
-                    Popular
-                  </Button>
-                  <Typography
-                    sx={{ padding: "5px 0", fontWeight: 400, color: "#fff",fontSize:"1.1rem" }}
-                    variant="h6"
-                  >
-                    Volcano near Iceland’s main airport
-                  </Typography>
-                </Box>
-              </Grid>
+              <Popular />
+              <Popular />
             </Grid>
 
             <Grid item xl={6} md={12} xs={12} height={"400px"} paddingLeft={3}>
@@ -185,10 +257,12 @@ const home = () => {
                     width: "100%",
                     textTransform: "capitalize",
                     background: "#d42929",
+
                   }}
                   className="rounded-0"
+                  fontSize="12px"
                 >
-                  <AccessTimeIcon fontSize="small" /> Recent
+                  <AccessTimeIcon fontSize="12px" sx={{pr:"2px"}} /> Recent
                 </Button>
                 <Button
                   variant="contained"
@@ -196,51 +270,29 @@ const home = () => {
                     width: "100%",
                     textTransform: "capitalize",
                     background: "#d42929",
+
                   }}
                   className="rounded-0"
+                  fontSize="12px"
                 >
-                  <LocalFireDepartmentIcon fontSize="small" /> Popular
+                  <LocalFireDepartmentIcon fontSize="12px" sx={{pr:"2px"}}  /> Popular
                 </Button>
                 <Button
-                  variant="contained"
-                  sx={{
-                    width: "100%",
-                    textTransform: "capitalize",
-                    background: "#d42929",
-                  }}
-                  className="rounded-0"
+                   variant="contained"
+                   sx={{
+                     width: "100%",
+                     textTransform: "capitalize",
+                     background: "#d42929",
+ 
+                   }}
+                   className="rounded-0"
+                   fontSize="12px"
                 >
-                  <TrendingUpIcon fontSize="small" /> tranding
+                  <TrendingUpIcon fontSize="12px" sx={{pr:"2px"}}  /> tranding
                 </Button>
               </ButtonGroup>
-              <Grid
-                xl={6}
-                md={12}
-                xs={12}
-                height={"89.5px"}
-                bgcolor={"black"}
-              ></Grid>
-              <Grid
-                xl={6}
-                md={12}
-                xs={12}
-                height={"89.5px"}
-                bgcolor={"blue"}
-              ></Grid>
-              <Grid
-                xl={6}
-                md={12}
-                xs={12}
-                height={"89.5px"}
-                bgcolor={"aqua"}
-              ></Grid>
-              <Grid
-                xl={6}
-                md={12}
-                xs={12}
-                height={"89.5px"}
-                bgcolor={"pink"}
-              ></Grid>
+
+              <Sidebar />
             </Grid>
           </Grid>
         </Grid>
@@ -332,7 +384,10 @@ const home = () => {
           </Grid>
           <Grid item xl={3} sx={{ bgcolor: "" }} paddingLeft={3}>
             <Grid item xl={12}>
-              <Item>xs=8</Item>
+              {/* <Item>
+              
+              </Item> */}
+              <Recents />
             </Grid>
           </Grid>
         </Grid>
