@@ -360,3 +360,20 @@ a:focus {
   object-fit: cover;
 }
 
+.modern-slider:hover .slick-arrow {
+  visibility: visible;
+  transition: ease-in 0.2s;
+  background-color: #1a202c78;
+  top:50%;
+  cursor: pointer;
+}
+
+.slick-arrow {
+  visibility: hidden;
+  top:55%;
+}
+
+
+
+
+
